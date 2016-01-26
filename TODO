@@ -1,0 +1,11 @@
+- Connect back when a lower sid connection is received in FLE
+- Test against ZooKeeper.
+- Add a flag that avoids taking leadership.
+- Test leader election with multiple failures against ZooKeeper
+- Check what happens when the FLE connection is drop because of the Pid check.
+- Verify again that JB sends the same messages under the same conditions (or that changes are controlled).
+- Apparently Zookeeper could fail in some corner cases. Make specific test cases and try it out.
+-- Test what happens when part of the connections hang or peers don't respond in FLE, but other part do respond (it does not reconnect).
+-- Test how much does election take when a lot of messages get queued up for several peers before they connect.
+- Working as a leader.
+- client management.

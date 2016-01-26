@@ -1,0 +1,113 @@
+compile:file("C:/Users/ecejmtr/Documents/jungleboogie/git/jungleboogie-code/jb_server/src/datastructs_y.erl", [verbose,report_errors,report_warnings,{i,"C:/Users/ecejmtr/Documents/jungleboogie/git/jungleboogie-code/jb_server/incl"},{outdir,"C:/Users/ecejmtr/workspace/JungleBoogie/ebin"}]).
+
+code:add_path("C:/Users/ecejmtr/workspace/JungleBoogie/ebin").
+code:purge(jute_code_gen), code:load_file(jute_code_gen).
+code:purge(jb_client_parser), code:load_file(jb_client_parser).
+code:purge(jb_client_fsm), code:load_file(jb_client_fsm).
+code:purge(jute_utils), code:load_file(jute_utils).
+code:purge(jb_fle_fsm), code:load_file(jb_fle_fsm).
+code:purge(jb_fle_test), code:load_file(jb_fle_test).
+code:purge(datastructs_x), code:load_file(datastructs_x).
+code:purge(datastructs_y), code:load_file(datastructs_y).
+code:purge(org_apache_zookeeper_proto), code:load_file(org_apache_zookeeper_proto).
+code:purge(org_apache_zookeeper_data), code:load_file(org_apache_zookeeper_data).
+code:purge(org_apache_zookeeper_server_persistence), code:load_file(org_apache_zookeeper_server_persistence).
+code:purge(org_apache_zookeeper_server_quorum), code:load_file(org_apache_zookeeper_server_quorum).
+code:purge(org_apache_zookeeper_txn), code:load_file(org_apache_zookeeper_txn).
+cd("C:/Users/ecejmtr/Documents/jungleboogie/git/jungleboogie-code/jb_server/src").
+
+jb_client_parser:debug_server(12345).
+
+code:purge(jb_store_mnesia), code:load_file(jb_store_mnesia).
+jb_store_mnesia:init_store().
+jb_store_mnesia:create("/usr", 123, a, a).
+jb_store_mnesia:create("/usr/tmp", 456, a, a).
+jb_store_mnesia:create("/usr/share", 000, a, a).
+jb_store_mnesia:exists("/usr").
+jb_store_mnesia:exists("/usr/tmp").
+jb_store_mnesia:delete("/usr").
+jb_store_mnesia:set_data("/usr", 789).
+jb_store_mnesia:create("/usr/tmp").
+jb_store_mnesia:delete("/usr").
+
+
+
+cd jungleboogie-code/zk_server/zoo2/logs; ./run.bat
+cd jungleboogie-code/jb_server/ebin; erl -pa ebin ... application:start(jb_server). 
+
+
+
+
+f(Server).
+Server = spawn(fun() -> jb_client_parser:debug_server(12345) end).
+
+
+leex:file("datastructs_x.xrl").
+c(datastructs_x).
+yecc:file("datastructs_y.yrl").
+c(datastructs_y).
+
+
+
+cd("C:/Users/ecejmtr/Documents/jungleboogie/git/jungleboogie-code/jb_server/src").
+{ok, Contents} = file:read_file("zookeeper.jute").
+ContentsStr = binary:bin_to_list(Contents).
+f(ContentTokens).
+f(Lines).
+{ok, ContentTokens, Lines} = datastructs_x:string(ContentsStr).
+f(ContentTokensEnd).
+ContentTokensEnd = ContentTokens ++ [{eof, Lines}].
+f(ModList).
+{ok, ModList} = datastructs_y:parse(ContentTokensEnd).
+jute_code_gen:file(ModList).
+
+
+code:purge(jute_code_gen), code:load_file(jute_code_gen).                    
+jute_code_gen:file(ModList).
+
+
+code:purge(jute_utils), code:load_file(jute_utils).
+Test1 = <<0,0,0,7>>.
+Test2 = <<0,0,0,0,0,0,0,3>>.
+Test3 = <<1>>.
+Test4 = <<0,0,0,7,1,2,3,4,5,6,7>>.
+Test5 = <<0,0,0,4,65,66,67,68>>.
+Test6 = <<0,0,0,4,1,0,0,1>>.
+jute_utils:read_int(Test1).
+jute_utils:read_long(Test2).
+jute_utils:read_boolean(Test3).
+jute_utils:read_buffer(Test4).
+jute_utils:read_ustring(Test5).
+jute_utils:read_vector(Test6, fun jute_utils:read_boolean/1).
+
+jute_utils:write_vector([5,6,7,8], fun jute_utils:write_integer/1).
+
+
+00000005
+00000001
+00000003
+00000000
+ffffffff
+
+
+
+
+CrRq1 = <<0,0,0,1,0,0,0,1,0,0,0,5,47,110,111,100,101,0,0,0,1,60,255,255,255,255,0,0,0,1>>.
+{DecHdr, Rest1} = org_apache_zookeeper_proto:read_RequestHeader(CrRq1).
+{DecCrRq, Rest2} = org_apache_zookeeper_proto:read_CreateRequest(Rest1).
+
+
+
+Received binary: <<0,0,0,29,0,0,0,1,0,0,0,1,0,0,0,5,47,110,111,100,101,0,0,0,0,
+                   255,255,255,255,0,0,0,1>>
+
+                   
+***********************
+
+testapp:
+
+code:add_path("C:/Users/ecejmtr/workspace/JungleBoogie/ebin").
+code:purge(jb_conn_wrt), code:load_file(jb_conn_wrt).
+code:purge(jb_conn_rdr), code:load_file(jb_conn_rdr).
+code:purge(jb_conn_sup_conns), code:load_file(jb_conn_sup_conns).
+code:purge(test_app), code:load_file(test_app).

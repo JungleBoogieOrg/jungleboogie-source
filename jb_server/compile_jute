@@ -1,0 +1,22 @@
+!#/usr/bin/env escript
+
+main([]) ->
+    leex:file("src/datastructs_x.xrl"),
+    yecc:file("src/datastructs_y.yrl"),
+    compile:file("src/datastructs_y.erl",[verbose,report_errors,report_warnings,{i,"include"},{outdir,"ebin"}]),
+    compile:file("src/datastructs_x.erl",[verbose,report_errors,report_warnings,{i,"include"},{outdir,"ebin"}]),
+    compile:file("src/jute_code_gen.erl",[verbose,report_errors,report_warnings,{i,"include"},{outdir,"ebin"}]),
+    code:add_path("ebin"),
+    code:load_file(datastructs_y),
+    code:load_file(datastructs_x),
+    code:load_file(jute_code_gen),
+    {ok, Contents} = file:read_file("src/zookeeper.jute"),
+    ContentsStr = binary:bin_to_list(Contents),
+    {ok, ContentTokens, Lines} = datastructs_x:string(ContentsStr),
+    ContentTokensEnd = ContentTokens ++ [{eof, Lines}],
+    {ok, ModList} = datastructs_y:parse(ContentTokensEnd),
+    file:set_cwd("src"),
+    jute_code_gen:file(ModList),
+    file:set_cwd(".."),
+    compile:file("test/jb_server_test.erl",[verbose,report_errors,report_warnings,{i,"src"},{i,"include"},{outdir,"ebin"},{d,log_trace},{d,log_debug},{d,log_info},{d,log_warn},{d,log_msgs}]),
+    compile:file("test/jb_txn_conn_test.erl",[verbose,report_errors,report_warnings,{i,"src"},{i,"include"},{outdir,"ebin"},{d,log_trace},{d,log_debug},{d,log_info},{d,log_warn},{d,log_msgs}]).

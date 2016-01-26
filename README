@@ -1,0 +1,14 @@
+This is a list of interesting links on the way Zookeeper works:
+http://static.usenix.org/event/usenix10/tech/full_papers/Hunt.pdf
+http://kisalay.com/2011/04/25/zab/
+http://zookeeper.apache.org/doc/r3.4.5/zookeeperInternals.html
+https://cwiki.apache.org/ZOOKEEPER/zab10.html
+
+Supervision tree:
+
+App server_sup -> server_fsm
+               -> in_con_sup(S)[] -> jb_fle_con(+ reader thread)
+               -> fle_out_conn_sup(1)[] -> jb_fle_conn(+ reader thread)
+               -> in_con_sup(S)[] -> jb_txn_con(+ reader thread)
+               -> txn_out_conn_sup(1)[] -> jb_txn_conn(+ reader thread)
+NOT IMPLEMENTED-> cli_in_con_sup(S)[] -> jb_cli_con(+ reader thread)

@@ -1,0 +1,265 @@
+INFO  {<0.2.0>,{14,27,56},jb_server_test,55}: 2 servers.
+INFO  {<0.35.0>,{14,27,56},jb_server_fsm,69}: Server for sid 1 starting.
+INFO  {<0.36.0>,{14,27,56},jb_server_fsm,69}: Server for sid 2 starting.
+TRACE {<0.35.0>,{14,27,56},jb_server_fsm,108}: Initial state {state,
+                                                              {vote,0,0,1},
+                                                              0,
+                                                              {1370,176076,
+                                                               685438},
+                                                              [{1,
+                                                                {{127,0,0,1},
+                                                                 28888,38888}},
+                                                               {2,
+                                                                {{127,0,0,1},
+                                                                 28889,38889}},
+                                                               {3,
+                                                                {{127,0,0,1},
+                                                                 28890,
+                                                                 38890}}],
+                                                              [],
+                                                              {ok,
+                                                               {1370176077286828,
+                                                                #Ref<0.0.0.120>}},
+                                                              {vote,0,0,1},
+                                                              [{1,
+                                                                {vote,0,0,1}}],
+                                                              [],true,
+                                                              undefined,
+                                                              undefined,200,3,
+                                                              3,undefined,[]}.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,108}: Initial state {state,
+                                                              {vote,0,0,2},
+                                                              0,
+                                                              {1370,176076,
+                                                               685676},
+                                                              [{1,
+                                                                {{127,0,0,1},
+                                                                 28888,38888}},
+                                                               {2,
+                                                                {{127,0,0,1},
+                                                                 28889,38889}},
+                                                               {3,
+                                                                {{127,0,0,1},
+                                                                 28890,
+                                                                 38890}}],
+                                                              [],
+                                                              {ok,
+                                                               {1370176077286837,
+                                                                #Ref<0.0.0.121>}},
+                                                              {vote,0,0,2},
+                                                              [{2,
+                                                                {vote,0,0,2}}],
+                                                              [],true,
+                                                              undefined,
+                                                              undefined,200,3,
+                                                              3,undefined,[]}.
+DEBUG {<0.45.0>,{14,27,56},jb_fle_conn,63}: Sending a request to myself in order to accept connection.
+DEBUG {<0.46.0>,{14,27,56},jb_fle_conn,63}: Sending a request to myself in order to accept connection.
+DEBUG {<0.45.0>,{14,27,56},jb_fle_conn,92}: Request to accept connections at #Port<0.554> received.
+DEBUG {<0.46.0>,{14,27,56},jb_fle_conn,92}: Request to accept connections at #Port<0.555> received.
+DEBUG {<0.49.0>,{14,27,56},jb_fle_conn,63}: Sending a request to myself in order to accept connection.
+DEBUG {<0.49.0>,{14,27,56},jb_fle_conn,92}: Request to accept connections at #Port<0.554> received.
+DEBUG {<0.47.0>,{14,27,56},jb_fle_conn,59}: Sending a request to myself in order to connect.
+DEBUG {<0.50.0>,{14,27,56},jb_fle_conn,59}: Sending a request to myself in order to connect.
+DEBUG {<0.47.0>,{14,27,56},jb_fle_conn,167}: Request to connect to {{127,0,0,
+                                                                     1},
+                                                                    38889} received.
+DEBUG {<0.50.0>,{14,27,56},jb_fle_conn,167}: Request to connect to {{127,0,0,
+                                                                     1},
+                                                                    38888} received.
+DEBUG {<0.47.0>,{14,27,56},jb_fle_conn,175}: Connection to {{127,0,0,1},38889} established.
+DEBUG {<0.51.0>,{14,27,56},jb_fle_conn,59}: Sending a request to myself in order to connect.
+DEBUG {<0.51.0>,{14,27,56},jb_fle_conn,167}: Request to connect to {{127,0,0,
+                                                                     1},
+                                                                    38890} received.
+DEBUG {<0.50.0>,{14,27,56},jb_fle_conn,175}: Connection to {{127,0,0,1},38888} established.
+DEBUG {<0.46.0>,{14,27,56},jb_fle_conn,103}: Closing connection from a lower Sid {1,
+                                                                                  2}.
+DEBUG {<0.52.0>,{14,27,56},jb_fle_conn,59}: Sending a request to myself in order to connect.
+DEBUG {<0.50.0>,{14,27,56},jb_fle_conn,200}: Linking this thread in FSM {global,
+                                                                         {jb_server_fsm,
+                                                                          2}} for sid 1 using socket #Port<0.563>.
+DEBUG {<0.45.0>,{14,27,56},jb_fle_conn,200}: Linking this thread in FSM {global,
+                                                                         {jb_server_fsm,
+                                                                          1}} for sid 2 using socket #Port<0.564>.
+DEBUG {<0.52.0>,{14,27,56},jb_fle_conn,167}: Request to connect to {{127,0,0,
+                                                                     1},
+                                                                    38890} received.
+DEBUG {<0.53.0>,{14,27,56},jb_fle_conn,63}: Sending a request to myself in order to accept connection.
+DEBUG {<0.36.0>,{14,27,56},jb_server_fsm,467}: Adding a new peer ({1,<0.50.0>}) to the server list.
+DEBUG {<0.53.0>,{14,27,56},jb_fle_conn,92}: Request to accept connections at #Port<0.555> received.
+DEBUG {<0.35.0>,{14,27,56},jb_server_fsm,467}: Adding a new peer ({2,<0.45.0>}) to the server list.
+LMSG  {<0.50.0>,{14,27,56},jb_fle_conn,119}: To #Port<0.563>, {notification,
+                                                               {vote,0,0,2},
+                                                               0,looking}.
+LMSG  {<0.45.0>,{14,27,56},jb_fle_conn,119}: To #Port<0.564>, {notification,
+                                                               {vote,0,0,1},
+                                                               0,looking}.
+DEBUG {<0.50.0>,{14,27,56},jb_fle_conn,121}: Result of send was ok.
+DEBUG {<0.45.0>,{14,27,56},jb_fle_conn,121}: Result of send was ok.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,127}: Processing notification in looking state. Sender 1.
+TRACE {<0.35.0>,{14,27,56},jb_server_fsm,127}: Processing notification in looking state. Sender 2.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,136}: Quorum is 2.
+TRACE {<0.35.0>,{14,27,56},jb_server_fsm,136}: Quorum is 2.
+DEBUG {<0.36.0>,{14,27,56},jb_server_fsm,155}: Adding vote {vote,0,0,1} from 1 within election, proposed election epoch 0.
+DEBUG {<0.36.0>,{14,27,56},jb_server_fsm,615}: Epoch is same, my proposal {vote,
+                                                                           0,
+                                                                           0,
+                                                                           2} is better.
+DEBUG {<0.35.0>,{14,27,56},jb_server_fsm,155}: Adding vote {vote,0,0,2} from 2 within election, proposed election epoch 0.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,662}: Searching for votes to 2 in current election.
+DEBUG {<0.35.0>,{14,27,56},jb_server_fsm,625}: Epoch is same, my proposal {vote,
+                                                                           0,
+                                                                           0,
+                                                                           1} is worse.
+LMSG  {<0.50.0>,{14,27,56},jb_fle_conn,119}: To #Port<0.563>, {notification,
+                                                               {vote,0,0,2},
+                                                               0,looking}.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,664}: Found a vote ({vote,0,0,2}) from (2).
+TRACE {<0.35.0>,{14,27,56},jb_server_fsm,595}: Sending notifications to all servers.
+DEBUG {<0.50.0>,{14,27,56},jb_fle_conn,121}: Result of send was ok.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,667}: Non-matching vote ({vote,0,0,1}) from (1).
+DEBUG {<0.35.0>,{14,27,56},jb_server_fsm,596}: Sending notify to 2.
+LMSG  {<0.45.0>,{14,27,56},jb_fle_conn,119}: To #Port<0.564>, {notification,
+                                                               {vote,0,0,2},
+                                                               0,looking}.
+DEBUG {<0.36.0>,{14,27,56},jb_server_fsm,647}: Number of votes received for proposed leader (2) is 1.
+TRACE {<0.35.0>,{14,27,56},jb_server_fsm,662}: Searching for votes to 2 in current election.
+DEBUG {<0.45.0>,{14,27,56},jb_fle_conn,121}: Result of send was ok.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,127}: Processing notification in looking state. Sender 1.
+TRACE {<0.35.0>,{14,27,56},jb_server_fsm,664}: Found a vote ({vote,0,0,2}) from (1).
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,136}: Quorum is 2.
+TRACE {<0.35.0>,{14,27,56},jb_server_fsm,664}: Found a vote ({vote,0,0,2}) from (2).
+DEBUG {<0.36.0>,{14,27,56},jb_server_fsm,155}: Adding vote {vote,0,0,2} from 1 within election, proposed election epoch 0.
+DEBUG {<0.35.0>,{14,27,56},jb_server_fsm,647}: Number of votes received for proposed leader (2) is 2.
+DEBUG {<0.36.0>,{14,27,56},jb_server_fsm,630}: Epoch is same, my proposal {vote,
+                                                                           0,
+                                                                           0,
+                                                                           2} is same.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,662}: Searching for votes to 2 in current election.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,664}: Found a vote ({vote,0,0,2}) from (2).
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,664}: Found a vote ({vote,0,0,2}) from (1).
+DEBUG {<0.36.0>,{14,27,56},jb_server_fsm,647}: Number of votes received for proposed leader (2) is 2.
+INFO  {<0.36.0>,{14,27,56},jb_server_fsm,710}: Election finished after 15570 microseconds. New state is leading. Leader is 2.
+DEBUG {<0.59.0>,{14,27,56},jb_txn_conn,75}: Sending a request to myself in order to accept connection. MySid 2.
+DEBUG {<0.59.0>,{14,27,56},jb_txn_conn,111}: Request to accept connections received.
+DEBUG {<0.60.0>,{14,27,56},jb_txn_conn,64}: Sending a request to myself in order to connect. MySid 1. PeerSid 2.
+DEBUG {<0.61.0>,{14,27,56},jb_txn_conn,75}: Sending a request to myself in order to accept connection. MySid 2.
+DEBUG {<0.60.0>,{14,27,56},jb_txn_conn,346}: Request to connect to {{127,0,0,
+                                                                     1},
+                                                                    28889} received.
+DEBUG {<0.61.0>,{14,27,56},jb_txn_conn,111}: Request to accept connections received.
+INFO  {<0.35.0>,{14,27,56},jb_server_fsm,710}: Election finished after 18322 microseconds. New state is following. Leader is 2.
+DEBUG {<0.59.0>,{14,27,56},jb_txn_conn,115}: Connection accepted.
+TRACE {<0.35.0>,{14,27,56},jb_server_fsm,490}: Sending notifications back to server out of ensemble with vote for 2.
+DEBUG {<0.60.0>,{14,27,56},jb_txn_conn,351}: Connection to port {{127,0,0,1},
+                                                                 28889} established.
+LMSG  {<0.45.0>,{14,27,56},jb_fle_conn,119}: To #Port<0.564>, {notification,
+                                                               {vote,0,0,2},
+                                                               1,following}.
+DEBUG {<0.60.0>,{14,27,56},jb_txn_conn,363}: Linking this thread in FSM {global,
+                                                                         {jb_server_fsm,
+                                                                          1}} for sid 2 using socket #Port<0.578>.
+DEBUG {<0.45.0>,{14,27,56},jb_fle_conn,121}: Result of send was ok.
+DEBUG {<0.36.0>,{14,27,56},jb_server_fsm,488}: Ignoring notification from someone that is not looking.
+TRACE {<0.35.0>,{14,27,56},jb_server_fsm,349}: Follower connected to leader 2.
+DEBUG {<0.59.0>,{14,27,56},jb_txn_conn,119}: Got a quorum packet ({'QuorumPacket',
+                                                                   11,0,
+                                                                   <<0,0,0,0,0,
+                                                                     0,0,1,0,1,
+                                                                     0,0>>,
+                                                                   []}).
+DEBUG {<0.59.0>,{14,27,56},jb_txn_conn,121}: Got learner info ({'LearnerInfo',
+                                                                1,65536}).
+DEBUG {<0.59.0>,{14,27,56},jb_txn_conn,123}: Connection received from 1 to 2.
+DEBUG {<0.59.0>,{14,27,56},jb_txn_conn,363}: Linking this thread in FSM {global,
+                                                                         {jb_server_fsm,
+                                                                          2}} for sid 1 using socket #Port<0.579>.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,191}: Leader received follower information from 1.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,193}: Sending Leader Info to 1.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,195}: Sending diff to 1.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,197}: Sending New Leader to 1.
+DEBUG {<0.59.0>,{14,27,56},jb_txn_conn,209}: Increasing n_acks. Was 0.
+LMSG  {<0.60.0>,{14,27,56},jb_txn_conn,272}: From 2, {leaderinfo,1,0}.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,199}: Sending up to date to 1.
+DEBUG {<0.59.0>,{14,27,56},jb_txn_conn,192}: Increasing n_acks. Was 1.
+DEBUG {<0.60.0>,{14,27,56},jb_server_fsm,47}: Msg {leaderinfo,1,0}.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,201}: Adding 1 to followers list.
+LMSG  {<0.60.0>,{14,27,56},jb_txn_conn,272}: From 2, {diff,1,0}.
+TRACE {<0.35.0>,{14,27,56},jb_server_fsm,358}: LeaderInfo request received Epoch is 1, Zxid is 0.
+DEBUG {<0.60.0>,{14,27,56},jb_server_fsm,47}: Msg {diff,1,0}.
+LMSG  {<0.60.0>,{14,27,56},jb_txn_conn,272}: From 2, {newleader,1,0}.
+TRACE {<0.35.0>,{14,27,56},jb_server_fsm,363}: Diff request received Epoch is 1, Zxid is 0. Local {state,
+                                                                                                   {vote,
+                                                                                                    1,
+                                                                                                    0,
+                                                                                                    1},
+                                                                                                   1,
+                                                                                                   undefined,
+                                                                                                   [{1,
+                                                                                                     {{127,
+                                                                                                       0,
+                                                                                                       0,
+                                                                                                       1},
+                                                                                                      28888,
+                                                                                                      38888}},
+                                                                                                    {2,
+                                                                                                     {{127,
+                                                                                                       0,
+                                                                                                       0,
+                                                                                                       1},
+                                                                                                      28889,
+                                                                                                      38889}},
+                                                                                                    {3,
+                                                                                                     {{127,
+                                                                                                       0,
+                                                                                                       0,
+                                                                                                       1},
+                                                                                                      28890,
+                                                                                                      38890}}],
+                                                                                                   [{2,
+                                                                                                     <0.45.0>}],
+                                                                                                   undefined,
+                                                                                                   {vote,
+                                                                                                    0,
+                                                                                                    0,
+                                                                                                    2},
+                                                                                                   [{1,
+                                                                                                     {vote,
+                                                                                                      0,
+                                                                                                      0,
+                                                                                                      1}}],
+                                                                                                   [],
+                                                                                                   true,
+                                                                                                   undefined,
+                                                                                                   <0.60.0>,
+                                                                                                   200,
+                                                                                                   3,
+                                                                                                   3,
+                                                                                                   [],
+                                                                                                   []}.
+DEBUG {<0.60.0>,{14,27,56},jb_server_fsm,47}: Msg {newleader,1,0}.
+LMSG  {<0.60.0>,{14,27,56},jb_txn_conn,272}: From 2, {uptodate}.
+TRACE {<0.35.0>,{14,27,56},jb_server_fsm,373}: New leader request received Epoch is 1, Zxid is 0.
+DEBUG {<0.60.0>,{14,27,56},jb_server_fsm,47}: Msg {uptodate}.
+TRACE {<0.35.0>,{14,27,56},jb_server_fsm,385}: UpToDate request received.
+LMSG  {<0.59.0>,{14,27,56},jb_txn_conn,272}: From 1, {ackepoch,0,0,
+                                                      <<0,0,0,0>>,
+                                                      1}.
+DEBUG {<0.59.0>,{14,27,56},jb_server_fsm,47}: Msg {ackepoch,0,0,<<0,0,0,0>>,1}.
+LMSG  {<0.59.0>,{14,27,56},jb_txn_conn,272}: From 1, {ack,1,0,1}.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,210}: Leader received ack epoch from 1.
+DEBUG {<0.59.0>,{14,27,56},jb_server_fsm,47}: Msg {ack,1,0,1}.
+LMSG  {<0.59.0>,{14,27,56},jb_txn_conn,272}: From 1, {ack,1,0,1}.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,213}: Leader received ack from 1.
+DEBUG {<0.59.0>,{14,27,56},jb_server_fsm,47}: Msg {ack,1,0,1}.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,221}: Follower state changed to {1,
+                                                                          <0.59.0>,
+                                                                          one_ack}.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,225}: Number of followers in sync is 0.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,213}: Leader received ack from 1.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,221}: Follower state changed to {1,
+                                                                          <0.59.0>,
+                                                                          sync}.
+TRACE {<0.36.0>,{14,27,56},jb_server_fsm,225}: Number of followers in sync is 1.
+INFO  {<0.36.0>,{14,27,56},jb_server_fsm,228}: Leader now attending requests.

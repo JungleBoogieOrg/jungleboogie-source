@@ -1,0 +1,106 @@
+-record('ConnectRequest',
+        {protocolVersion,
+         lastZxidSeen,
+         timeOut,
+         sessionId,
+         passwd}).
+-record('ConnectResponse',
+        {protocolVersion,
+         timeOut,
+         sessionId,
+         passwd}).
+-record('SetWatches',
+        {relativeZxid,
+         dataWatches,
+         existWatches,
+         childWatches}).
+-record('RequestHeader',
+        {xid,
+         type}).
+-record('MultiHeader',
+        {type,
+         done,
+         err}).
+-record('AuthPacket',
+        {type,
+         scheme,
+         auth}).
+-record('ReplyHeader',
+        {xid,
+         zxid,
+         err}).
+-record('GetDataRequest',
+        {path,
+         watch}).
+-record('SetDataRequest',
+        {path,
+         data,
+         version}).
+-record('SetDataResponse',
+        {stat}).
+-record('GetSASLRequest',
+        {token}).
+-record('SetSASLRequest',
+        {token}).
+-record('SetSASLResponse',
+        {token}).
+-record('CreateRequest',
+        {path,
+         data,
+         acl,
+         flags}).
+-record('DeleteRequest',
+        {path,
+         version}).
+-record('GetChildrenRequest',
+        {path,
+         watch}).
+-record('GetChildren2Request',
+        {path,
+         watch}).
+-record('CheckVersionRequest',
+        {path,
+         version}).
+-record('GetMaxChildrenRequest',
+        {path}).
+-record('GetMaxChildrenResponse',
+        {max}).
+-record('SetMaxChildrenRequest',
+        {path,
+         max}).
+-record('SyncRequest',
+        {path}).
+-record('SyncResponse',
+        {path}).
+-record('GetACLRequest',
+        {path}).
+-record('SetACLRequest',
+        {path,
+         acl,
+         version}).
+-record('SetACLResponse',
+        {stat}).
+-record('WatcherEvent',
+        {type,
+         state,
+         path}).
+-record('ErrorResponse',
+        {err}).
+-record('CreateResponse',
+        {path}).
+-record('ExistsRequest',
+        {path,
+         watch}).
+-record('ExistsResponse',
+        {stat}).
+-record('GetDataResponse',
+        {data,
+         stat}).
+-record('GetChildrenResponse',
+        {children}).
+-record('GetChildren2Response',
+        {children,
+         stat}).
+-record('GetACLResponse',
+        {acl,
+         stat}).
